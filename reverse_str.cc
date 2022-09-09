@@ -1,18 +1,31 @@
-void reverse_str(char* src, char* dest[])
+#include <iostream>
+
+void swap(char *x, char *y)
 {
-    if (*src)
-    {
-        reverse_str(src+1, dest);
-        *(*dest) = *src;
-        (*dest)++;
-    }
+    char temp = *x;
+    *x = *y;
+    *y = temp;
 }
+
+void reverse_str(char *str, int k)
+{
+    static int i = 0;
  
+    // if the end of the string is reached
+    if (*(str + k) == '\0')
+        return;
+ 
+    reverse_str(str, k + 1);
+ 
+    if (i <= k)
+        swap(&str[i++], &str[k]);
+}
 
 int main()
 {
-    char a[20] = "Anita lava la tina";
-    char a_reversed[20];
-    reverse_str(a, );
+    char a[] = "Anita lava la tina";
+    char a_reversed[19];
+    reverse_str(a, 19);
+    std::cout << a << ' ' << a_reversed << std::endl;
     return 0;
 }
