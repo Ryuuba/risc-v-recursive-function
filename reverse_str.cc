@@ -1,27 +1,30 @@
-void swap(char *x, char *y)
+void swap(char* x, char* y)
 {
     char temp = *x;
     *x = *y;
     *y = temp;
 }
 
-void reverse_str(char *str, int k)
+void reverse_str(char* str, unsigned pos)
 {
     static int i = 0;
  
     // if the end of the string is reached
-    if (*(str + k) == '\0')
+    if (*(str + pos) == '\0')
         return;
  
-    reverse_str(str, k + 1);
+    reverse_str(str, pos + 1);
  
-    if (i <= k)
-        swap(&str[i++], &str[k]);
+    if (i <= pos)
+        swap(&str[i++], &str[pos]);
+    
+    return;
 }
 
 int main()
 {
     char a[] = "Anita lava la tina";
-    reverse_str(a, 0);
+    unsigned initial_position = 0;
+    reverse_str(a, initial_position);
     return 0;
 }
