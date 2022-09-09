@@ -1,5 +1,3 @@
-#include <iostream>
-
 void swap(char *x, char *y)
 {
     char temp = *x;
@@ -24,8 +22,6 @@ void reverse_str(char *str, int k)
 int main()
 {
     char a[] = "Anita lava la tina";
-    char a_reversed[19];
-    reverse_str(a, 19);
-    std::cout << a << ' ' << a_reversed << std::endl;
+    reverse_str(a, 0);
     return 0;
 }
