@@ -12,5 +12,3 @@ int main() {
     unsigned fib = fibonacci(10);
     return 0;
 }
-
-

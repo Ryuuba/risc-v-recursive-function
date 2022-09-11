@@ -8,16 +8,11 @@ void swap(char* x, char* y)
 void reverse_str(char* str, unsigned pos)
 {
     static int i = 0;
- 
-    // if the end of the string is reached
     if (*(str + pos) == '\0')
         return;
- 
     reverse_str(str, pos + 1);
- 
     if (i <= pos)
         swap(&str[i++], &str[pos]);
-    
     return;
 }
 
