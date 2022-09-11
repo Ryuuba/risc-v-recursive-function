@@ -8,6 +8,6 @@ unsigned factorial(unsigned x)
 
 int main()
 {
-    unsigned x = factorial(10);
+    unsigned x = factorial(4);
     return 0;
 }
