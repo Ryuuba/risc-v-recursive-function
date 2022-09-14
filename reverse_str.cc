@@ -12,7 +12,10 @@ void reverse_str(char* str, unsigned pos)
         return;
     reverse_str(str, pos + 1);
     if (i <= pos)
-        swap(&str[i++], &str[pos]);
+    {
+        swap(&str[i], &str[pos]);
+        i = i + 1;
+    }
     return;
 }
 
