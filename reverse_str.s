@@ -10,9 +10,9 @@ i:  .word 0
     .globl swap
 swap:
         # char temp = *x;
-        lbu  t0, 0(a0)
+        lb   t0, 0(a0)
         # *x = *y;
-        lbu  t1, 0(a1)
+        lb   t1, 0(a1)
         sb   t1, 0(a0)
         # *y = temp;
         sb   t0, 0(a1)
@@ -86,7 +86,7 @@ main:
         sw   fp, 44(sp)
         addi fp, sp, 48
         # char a[] = "Anita lava la tina";
-        addi t0, fp, -35
+        addi t0, fp, -31
         addi t1, zero, 0x41
         sb   t1, 0(t0)
         addi t1, zero, 0x6E
@@ -127,10 +127,10 @@ main:
         sb   t1, 18(t0)
         # unsigned initial_position = 0;
         addi t0, zero, 0
-        sw   t0, -40(fp)
+        sw   t0, -36(fp)
         # reverse_str(a, initial_position);
-        lw   a1, -40(fp)
-        addi a0, fp, -35
+        lw   a1, -36(fp)
+        addi a0, fp, -31
         jal  reverse_str
         # return 0;
         addi a0, zero, 0
