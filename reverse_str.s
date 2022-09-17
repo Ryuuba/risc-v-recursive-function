@@ -55,9 +55,9 @@ L1:     sw   a1, -16(fp)
         # swap(&str[i++], &str[pos]);
         sw   a1, -16(fp)
         sw   a0, -20(fp)
-        lw   t0, -20(fp)
-        lw   t1, -16(fp)
-        add  a1, t0, t1
+        lw   t0, -16(fp)
+        lw   t1, -20(fp)
+        add  a1, t1, t0
         lw   t0, 0(gp)
         lw   t1, -20(fp)
         add  a0, t1, t0
